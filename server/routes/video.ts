@@ -1,5 +1,5 @@
-import xior from "xior";
 import * as cheerio from "cheerio";
+import "isomorphic-fetch";
 
 import { Hono } from "hono";
 import { getChaptersFromJson } from "../lib/video";
