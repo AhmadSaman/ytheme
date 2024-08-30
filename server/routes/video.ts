@@ -1,4 +1,4 @@
-import axios from "axios";
+import xior from "xior";
 import * as cheerio from "cheerio";
 
 import { Hono } from "hono";
@@ -22,7 +22,7 @@ videoRoute.get("/:id", async (c) => {
   const { id } = c.req.param();
   const url = `https://www.youtube.com/watch?v=${id}`;
   try {
-    const { data: html } = await axios.get(url);
+    const { data: html } = await xior.get(url);
     const $ = cheerio.load(html);
     const scriptTag = $('script:contains("ytInitialData")').html();
 
