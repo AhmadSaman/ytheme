@@ -20,7 +20,7 @@ export const videoRoute = new Hono();
 
 videoRoute.get("/:id", async (c) => {
   const { id } = c.req.param();
-  const url = `https://www.youtube.com/watch?v=${id}`;
+  const url = `https://hono.dev/`;
   try {
     const { data: html } = await axios.get(url);
     const $ = cheerio.load(html);
