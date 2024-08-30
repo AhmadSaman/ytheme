@@ -22,7 +22,8 @@ videoRoute.get("/:id", async (c) => {
   const { id } = c.req.param();
   const url = `https://www.youtube.com/watch?v=${id}`;
   try {
-    const { data: html } = await xior.get(url);
+    const res = await fetch(url);
+    const html = await res.text();
     const $ = cheerio.load(html);
     const scriptTag = $('script:contains("ytInitialData")').html();
 
