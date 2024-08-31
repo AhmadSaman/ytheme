@@ -25,7 +25,6 @@ videoRoute.get("/:id", async (c) => {
     const html = await res.text();
     const $ = cheerio.load(html);
     const scriptTag = $('script:contains("ytInitialData")').html();
-    console.log(html);
     if (!scriptTag) {
       throw new Error("ytInitialData script tag not found");
     }
