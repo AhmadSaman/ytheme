@@ -388,20 +388,10 @@ styled-jsx@5.1.1:
   dependencies:
     client-only "0.0.1"
 
-tiny-lru@^11.2.5:
-  version "11.2.11"
-  resolved "https://registry.yarnpkg.com/tiny-lru/-/tiny-lru-11.2.11.tgz#5089a6a4a157f5a97b82aa930b44d550ac5c4778"
-  integrity sha512-27BIW0dIWTYYoWNnqSmoNMKe5WIbkXsc0xaCQHd3/3xT2XMuMJrzHdrO9QBFR14emBz1Bu0dOAs2sCBBrvgPQA==
-
 tr46@~0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/tr46/-/tr46-0.0.3.tgz#8184fd347dac9cdc185992f3a6622e14b9d9ab6a"
   integrity sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==
-
-ts-deepmerge@^7.0.0:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/ts-deepmerge/-/ts-deepmerge-7.0.1.tgz#4b3dceb5a9b4308b7279d738c8d29834fbd5856b"
-  integrity sha512-JBFCmNenZdUCc+TRNCtXVM6N8y/nDQHAcpj5BlwXG/gnogjam1NunulB9ia68mnqYI446giMfpqeBFFkOleh+g==
 
 tslib@^2.4.0:
   version "2.7.0"
@@ -447,11 +437,3 @@ whatwg-url@^5.0.0:
   dependencies:
     tr46 "~0.0.3"
     webidl-conversions "^3.0.0"
-
-xior@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/xior/-/xior-0.6.1.tgz#ff53e34c859874a8de57aa41bdc317306504e5df"
-  integrity sha512-fDF03AFiAev4Tz9G7xEorhxSj8/BJu7Yt4joRw7D4wDFSqxHaObBVAjDTPQEIAcGmd4xf1vVFdTsEIDV+y+l9A==
-  dependencies:
-    tiny-lru "^11.2.5"
-    ts-deepmerge "^7.0.0"
