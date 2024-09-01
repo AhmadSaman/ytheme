@@ -22,7 +22,6 @@ export const getChaptersFromJson = (json: any) => {
 
   contents.forEach((chapter: any) => {
     chapter = chapter.macroMarkersListItemRenderer;
-    console.log(chapter);
     let timeStr = chapter.timeDescription.simpleText;
     const timeParts = timeStr.split(":").map(Number);
 
