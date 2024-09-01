@@ -4,8 +4,7 @@ function layout({
   children: React.ReactNode;
 }>) {
   return (
-    <div>
-      <p>layout</p>
+    <div className="h-screen w-screen justify-center items-center bg-zinc-800">
       {children}
     </div>
   );

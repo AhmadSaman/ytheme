@@ -8,12 +8,14 @@ import { parseWithZod } from "@conform-to/zod";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { ArrowRight } from "lucide-react";
 import { url } from "./action";
-import { useFormState, useFormStatus } from "react-dom";
+import { useFormState } from "react-dom";
 import { urlSchema } from "./schema";
 
 export default function Home() {
-  const [_, action] = useFormState(url, undefined);
+  const [lastResult, action] = useFormState(url, undefined);
+
   const [form, fields] = useForm({
+    lastResult,
     onValidate({ formData }) {
       return parseWithZod(formData, { schema: urlSchema });
     },
@@ -21,7 +23,6 @@ export default function Home() {
     shouldValidate: "onInput",
     shouldRevalidate: "onInput",
   });
-
   return (
     <div className="h-screen w-screen flex flex-col bg-zinc-800 gap-4">
       <div className="flex-1 justify-center content-center my-auto w-full gap-4 flex flex-col">
@@ -36,8 +37,8 @@ export default function Home() {
           className="flex gap-3 mx-auto w-11/12 lg:flex-row flex-col lg:w-1/3"
         >
           <Input
-            className="bg-slate-50 w-full focus:scale-[1.01] transition-all duration-200"
-            placeholder="paste your youtube link"
+            className="bg-slate-50 w-full"
+            placeholder="paste youtube video link"
             key={fields.url.key}
             name={fields.url.name}
             defaultValue={fields.url.initialValue}

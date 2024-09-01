@@ -15,8 +15,7 @@ const Page = async ({ params }: PageProps) => {
 
     return (
       <div>
-        <h1>Video ID: {params.id}</h1>
-        <pre>{JSON.stringify(json, null, 2)}</pre>
+        <h1 className="text-slate-100">Video ID: {params.id}</h1>
       </div>
     );
   } catch (error) {

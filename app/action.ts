@@ -8,16 +8,20 @@ export async function url(prevState: unknown, formData: FormData) {
   const submission = parseWithZod(formData, {
     schema: urlSchema,
   });
-  console.log(submission);
+
   if (submission.status !== "success") {
     return submission.reply();
   }
 
   const { url } = Object.fromEntries(await formData);
-  // @ts-ignore
-  const newUrl = new URL(url);
-  const searchParams = new URLSearchParams(newUrl.search);
-  console.log();
 
+  const newUrl = new URL(url.toString());
+
+  if (newUrl.href.includes("youtu.be")) {
+    const parts = newUrl.pathname.split("/");
+    const id = parts[parts.length - 1];
+    return redirect(`/${id}`);
+  }
+  const searchParams = new URLSearchParams(newUrl.search);
   redirect(`/${searchParams.get("v")?.toString()}`);
 }
