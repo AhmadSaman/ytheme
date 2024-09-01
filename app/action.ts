@@ -14,6 +14,7 @@ export async function url(prevState: unknown, formData: FormData) {
   }
 
   const { url } = Object.fromEntries(await formData);
+  // @ts-ignore
   const newUrl = new URL(url);
   const searchParams = new URLSearchParams(newUrl.search);
   console.log();
