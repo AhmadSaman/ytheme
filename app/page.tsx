@@ -6,7 +6,7 @@ export default async function Home() {
     <div>
       <p className="text-purple-600 text-2xl">youtube chapters</p>
       <Button asChild>
-        <Link href={"jXyTIQOfTTk"}>text link</Link>
+        <Link href={"/jXyTIQOfTTk"}>text link</Link>
       </Button>
     </div>
   );
