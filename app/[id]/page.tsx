@@ -14,8 +14,19 @@ const Page = async ({ params }: PageProps) => {
     const json = await res.json();
 
     return (
-      <div>
-        <h1 className="text-slate-100">Video ID: {params.id}</h1>
+      <div className="lg:flex text-slate-100 h-full">
+        <main className="flex-1 flex lg:h-full h-[300px]">
+          <iframe
+            className="w-full flex-1 rounded-lg overflow-hidden m-4 box-border"
+            src={`https://www.youtube.com/embed/${params.id}`}
+            title="YouTube video player"
+            // frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </main>
+        <section className="lg:w-[20%] md:w-[200px] w-full">cscs</section>
       </div>
     );
   } catch (error) {
