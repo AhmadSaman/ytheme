@@ -1,7 +1,8 @@
 import * as cheerio from "cheerio";
 
-import { Hono } from "hono";
 import { getChaptersFromJson } from "../lib/video";
+
+import { Hono } from "hono";
 
 export type Thumbnail = {
   url: string;
@@ -15,9 +16,7 @@ export type Chapter = {
   thumbnails: Thumbnail[];
 };
 
-export const videoRoute = new Hono();
-
-videoRoute.get("/:id", async (c) => {
+export const videoRoute = new Hono().get("/:id", async (c) => {
   const { id } = c.req.param();
   const url = `https://www.youtube.com/watch?v=${id}`;
   try {
