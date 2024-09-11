@@ -1,18 +1,21 @@
+import { hc } from "hono/client";
+import { AppType } from "../api/[...route]/route";
 interface PageProps {
   params: { id: string };
 }
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
+const client = hc<AppType>(apiUrl!);
+
 const Page = async ({ params }: PageProps) => {
   try {
-    const res = await fetch(`${apiUrl}/api/video/${params.id}`);
-
+    const res = await client.api.video[":id"].$get({
+      param: { id: params.id },
+    });
     if (!res.ok) {
       throw new Error("Failed to fetch data");
     }
-
     const json = await res.json();
-
     return (
       <div className="lg:flex text-slate-100 h-full">
         <main className="flex-1 flex lg:h-full h-[300px]">
@@ -26,7 +29,9 @@ const Page = async ({ params }: PageProps) => {
             allowFullScreen
           ></iframe>
         </main>
-        <section className="lg:w-[20%] md:w-[200px] w-full">cscs</section>
+        <section className="lg:w-[20%] md:w-[200px] w-full m-4">
+          {/* <pre> {JSON.stringify(json, null, 2)}</pre> */}
+        </section>
       </div>
     );
   } catch (error) {
