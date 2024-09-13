@@ -21,9 +21,9 @@ const Page = async ({ params }: PageProps) => {
     } = await res.json();
     return (
       <div className="flex flex-col xl:flex-row gap-4 p-4 text-slate-100 h-full">
-        <main className="flex xl:h-full h-[50%]">
+        <main className="flex xl:flex-1 xl:h-full h-[50%]">
           <iframe
-            className="flex-1  rounded-lg"
+            className="flex-1 rounded-lg"
             src={`https://www.youtube.com/embed/${params.id}`}
             title="YouTube video player"
             // frameborder="0"
