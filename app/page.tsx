@@ -24,7 +24,7 @@ export default function Home() {
     shouldRevalidate: "onInput",
   });
   return (
-    <div className="h-screen w-screen flex flex-col bg-zinc-800 gap-4">
+    <div className="h-dvh w-screen flex flex-col bg-zinc-800 gap-4">
       <div className="flex-1 justify-center content-center my-auto w-full gap-4 flex flex-col">
         <p className="text-slate-50 text-xl font-bold text-center">
           <span className="text-[#cc0000]">YT</span>heme

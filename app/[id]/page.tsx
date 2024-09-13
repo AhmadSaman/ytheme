@@ -20,7 +20,7 @@ const Page = async ({ params }: PageProps) => {
       data: { chapters },
     } = await res.json();
     return (
-      <div className="flex flex-col xl:flex-row gap-4 p-4 text-slate-100 h-full">
+      <div className="flex flex-col xl:flex-row gap-4 p-4 text-slate-100 h-dvh">
         <main className="flex xl:flex-1 xl:h-full h-[50%]">
           <iframe
             className="flex-1 rounded-lg"
