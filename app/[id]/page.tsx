@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { hc } from "hono/client";
 import { AppType } from "../api/[...route]/route";
+import { cn, formatTime } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
 interface PageProps {
   params: { id: string };
 }
@@ -40,11 +42,13 @@ const Page = async ({ params }: PageProps) => {
                 alt="thumbnail"
                 width={chapter.thumbnails[0].width}
                 height={chapter.thumbnails[0].height}
-                className="rounded-md"
+                className="rounded-md object-contain w-[100px] lg:w-auto"
               />
               <div className="text-sm">
                 <p>{chapter.title}</p>
-                <p>{chapter.time}</p>
+                <Badge variant={"default"} className="px-0">
+                  {formatTime(chapter.time)}
+                </Badge>
               </div>
             </div>
           ))}
